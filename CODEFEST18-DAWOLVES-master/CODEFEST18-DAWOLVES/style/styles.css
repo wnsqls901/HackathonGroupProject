@@ -5,15 +5,52 @@
 canvas {
 	background: #eee;
 	display: block;
-	margin: 100px auto;
+	border: 1px solid black;
 }
-<<<<<<< HEAD
+
 #wrapper {
-	margin: 100px;
-	border: 1px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 700px;
+	max-width: 1024px;
+	margin-top: 5%;
+	border: 2px solid black;
+	display: inline-block;
 }
+.textarea_format {
+	margin-top: 10px;
+	margin-bottom: 120px;
 
+}
+#input {
+	float: left;
+}
+#controls {
+	float: right;
+}
+#previous {
+	margin-right: 40%;
+}
+#execute {
+	margin-right: 40%
+}
+#Next {
+}
 .button_format {
-
->>>>>>> 069a7b10a53e807c90e6f14b6d578888371b352f
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.developer_buttons {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+textarea{
+	width:  300px;
+	height: 100px;
+	resize: none;
 }

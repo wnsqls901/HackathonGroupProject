@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en"><!-- HEADING -->
 <head>
 	<title>Game</title>
@@ -6,35 +6,31 @@
 </head>
 <body>
 <div id="wrapper">
-<<<<<<< HEAD
-		<header>
-			<h1>Game</h1>
-		</header>
-
-
-        <!-- <canvas id="myCanvas" width="680" height="340"></canvas> -->
-				<!-- <script src="scripts/scripting.js"> </script> --> 
-				<script src="scripts/gravity.js"> </script>
-
-
-		<div id="button_panel">
-			<button name = "buttons" type = "button" id="startGame" value="startGame">Start Game</button>
-			<button name = "buttons" type = "button" id="next" value="next">Next</button>
-      <button name = "buttons" type = "button" id="previous" value="prev">Previous</button>
-			<button name = "buttons" type = "button" id="execute" value = "exe">Execute</button>
-
-=======
     <canvas id="myCanvas" width="680" height="340"></canvas>
 		<script src="scripts/scripting.js"> </script>
+
 		<div class="textarea_format">
 			<textarea name="textareas" type="textarea" id="input" value="input"></textarea>
-			<textarea name="textareas" type="textarea" id="controls" value="controls"></textarea>
->>>>>>> 165fdca7c79b63c7d3da76f47dfda98ca6184b5f
+
+			<span id="controls">
+				<b>CONTROLS</b>
+				<ul>
+					<li>JS DEVELOPERS -- Write over this for each stage</li>
+				</ul>
+			</span>
 		</div>
-		<div class="button_format">
-			<button name="buttons" type="button" id="next" value="next">Next</button>
-    	<button name="buttons" type="button" id="previous" value="prev">Previous</button>
-			<button name="buttons" type="button" id="execute" value="exe">Execute</button>
+			<div id="button_panel">
+				<button name="previous" type="button" id="previous" value="prev">Previous</button>
+				<button name="execute" type="button" id="execute" value="exe">Execute</button>
+				<button name="next" type="button" id="next" value="next">Next</button>
+			</div>
+			<div class="developer_buttons">
+				<button name="down" type="button" id="down" value="down">DOWN</button>
+				<button name="up" type="button" id="up" value="up">UP</button>
+				<button name="left" type="button" id="left" value="left">LEFT</button>
+				<button mae="right" type="button" id="right" value="right">RIGHT</button>
+			</div>
+			<script src="scripts/scripting.js>"
 	</div>
 </body>
 </html>
