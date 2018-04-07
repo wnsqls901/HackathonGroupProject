@@ -1,11 +1,13 @@
 * {
-	padding: 0;
+	font-family: sans-serif;
 	margin: 0;
+	padding: 0;
 }
 canvas {
 	background: #FFFFFF;
 	display: block;
 	border: 1px solid black;
+	border-radius: 25px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -14,27 +16,36 @@ canvas {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-
+	//background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
 	padding: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	min-width: 700px;
 	max-width: 1024px;
 	margin-top: 10px;
-	border: 2px solid black;
+  //border: 2px solid black;
+	border-radius: 25px;
 	display: inline-block;
 }
 .textarea_format {
 
-	margin-top: 10px;
-	margin-bottom: 120px;
+	margin-top: 20px;
+	margin-bottom: 160px;
 
 }
 #input {
 	float: left;
 }
 #controls {
+	padding-left: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+  border: 1px solid black;
+	border-radius: 25px;
 	float: right;
+	margin-right: 10px;
+	background-color: white;
+
 }
 #previous {
 	float: left;
@@ -55,12 +66,35 @@ canvas {
 }
 header {
 	text-align: center;
+	//border: 1px solid black;
 	font-weight: bold;
-	margin-top: 10px;
-	font-size: 30px;
+	margin-top: 50px;
+	font-size: 15px;
+
 }
 textarea{
+
+	border: 1px solid black;
+	margin-left: 10px;
 	width:  300px;
-	height: 100px;
+	height: 70px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	border-radius: 25px;
 	resize: none;
+}
+body{
+	background: url('../images/gameboy.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+ul {
+
+
+		width:  300px;
+		height: 90px;
+
+	overflow:hidden;
+	overflow-y: scroll;
 }
