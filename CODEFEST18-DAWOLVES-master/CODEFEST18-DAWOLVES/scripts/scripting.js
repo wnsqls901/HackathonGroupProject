@@ -8,48 +8,64 @@ window.onload = function() {
  document.getElementById("left").addEventListener("click", left);
  document.getElementById("right").addEventListener("click", right);
 
- var x = canvas.width/15;
- var y = canvas.height-30;
+ var x = 15;
+ var y = 15;
+
+ var ballRadius = 15;
 
  var dx = 30;
- var dy = -30;
+ var dy = 30;
 
 function draw(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.beginPath();
-  ctx.arc(x, y, 10, 0, Math.PI*2);
+  ctx.arc(x, y, ballRadius, 0, Math.PI*2);
   ctx.fillStyle = "green";
   ctx.fill();
   ctx.closePath();
-
-
 }
 
-
 function up(){
-  y += dy;
-  draw();
+  if(y - dy > canvas.height-ballRadius || y - dy < ballRadius) {
+    y -= 0;
+    draw();
+  } else {
+    y -= dy;
+    draw();
+  }
 }
 
 function down(){
-  y -= dy;
-  draw();
+  if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+    y -= 0;
+    draw();
+  } else {
+    y += dy;
+    draw();
+  }
 }
 
 function left(){
- x -= dx;
- draw();
+  if(x - dx> canvas.width-ballRadius || x - dx < ballRadius) {
+    x -= 0;
+    draw();
+  } else {
+    x -= dx;
+    draw();
+  }
 }
 
 function right(){
-  x += dx;
-  draw();
+  if(x + dx > canvas.width-ballRadius || x + dx< ballRadius) {
+    x += 0;
+    draw();
+  } else{
+    x += dx;
+    draw();
+  }
 }
 
-
-
 draw();
-
 
 
 
