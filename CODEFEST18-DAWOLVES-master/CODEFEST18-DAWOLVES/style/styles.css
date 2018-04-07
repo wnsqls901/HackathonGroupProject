@@ -73,6 +73,8 @@ header {
 
 }
 textarea{
+
+	border: 1px solid black;
 	margin-left: 10px;
 	width:  300px;
 	height: 70px;
