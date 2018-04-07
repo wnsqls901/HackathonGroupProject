@@ -9,8 +9,15 @@ canvas {
 }
 
 #wrapper {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+
 	padding: 10px;
-	margin-left: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 700px;
+	max-width: 1024px;
 	margin-top: 5%;
 	border: 2px solid black;
 	display: inline-block;
