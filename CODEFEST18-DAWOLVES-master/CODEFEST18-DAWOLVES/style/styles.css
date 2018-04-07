@@ -1,6 +1,7 @@
 * {
-	padding: 0;
+	font-family: sans-serif;
 	margin: 0;
+	padding: 0;
 }
 canvas {
 	background: #eee;
@@ -28,8 +29,8 @@ canvas {
 }
 .textarea_format {
 
-	margin-top: 10px;
-	margin-bottom: 120px;
+	margin-top: 20px;
+	margin-bottom: 180px;
 
 }
 #input {
@@ -60,13 +61,14 @@ header {
 	//border: 1px solid black;
 	font-weight: bold;
 	margin-top: 50px;
-	font-size: 30px;
+	font-size: 25px;
 
 }
 textarea{
 	width:  300px;
 	height: 100px;
 	padding-top: 20px;
+	padding-bottom: 30px;
 	border-radius: 25px;
 	resize: none;
 }
