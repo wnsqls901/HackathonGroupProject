@@ -2,7 +2,7 @@ var myGamePiece;
 var myObstacles = [];
 var myScore;
 
-document.getElementById("startGame").addEventListener(onclick, startGame);
+document.getElementById('startGame').addEventListener("click", startGame);
 
 function startGame() {
     myGamePiece = new component(30, 30, "red", 10, 120);
