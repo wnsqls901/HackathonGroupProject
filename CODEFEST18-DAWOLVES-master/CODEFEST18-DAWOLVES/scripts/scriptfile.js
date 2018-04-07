@@ -4,39 +4,30 @@ var ctx;
 var x;
 var y;
 var radius;
-var GameLevels = {"monday":1, "tuesday":2, "wednesday":3, ...} Object.freeze(GameLevels);
-var rectangle = new Rect(300,300,50,50);
+var GameLevels = {"LevelOne":1, "LevelTwo":2, "LevelThree":3, "LevelFour":4, "LevelFive":5} Object.freeze(GameLevels);
+var rectangle = new Rectangle(300,300,50,50);
 var lives = 3;
 
  canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
 
-
-
-function Circle(w, l){
+function Rectangle(w, l){
     w = xplane;
     l = yplane;
-    radius = r
 }
 function drawGame() {
-    ctx.beginPath();
-    ctx.arc(300,300,50,0,Math.PI *2);
-    ctx.fillStyle = "#00cc00";
-    ctx.fill();
-
-
+    ctx.fillRect(20,20,150,100);
 }
 
 function drawLives(){
 	ctx.font ="16px Arial";
 	ctx.fillStyle ="#0095DD";
-	ctx.fillText("Lives: " + lives, canvas.width -65,20);
+  ctx.stroke();
 	}
 
 function init(){
 
-    drawBall();
-
+    drawGame();
 }
 
 window.onload = function(){
