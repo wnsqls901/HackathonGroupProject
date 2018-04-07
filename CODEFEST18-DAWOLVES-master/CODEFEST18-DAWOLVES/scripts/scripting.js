@@ -24,10 +24,11 @@ ctx.closePath();
 
 
 function up(){
-
   y += dy;
   draw();
 }
+
+
 
 
 
