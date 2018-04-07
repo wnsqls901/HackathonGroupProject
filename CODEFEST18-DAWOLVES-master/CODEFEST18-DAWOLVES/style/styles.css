@@ -6,6 +6,8 @@ canvas {
 	background: #eee;
 	display: block;
 	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #wrapper {
@@ -23,6 +25,7 @@ canvas {
 	display: inline-block;
 }
 .textarea_format {
+
 	margin-top: 10px;
 	margin-bottom: 120px;
 
@@ -34,12 +37,13 @@ canvas {
 	float: right;
 }
 #previous {
-	margin-right: 40%;
+	float: left;
 }
 #execute {
-	margin-right: 40%
+	margin-left: 40%;
 }
-#Next {
+#next {
+	float: right;
 }
 .button_format {
 	margin-top: 10px;
