@@ -10,7 +10,8 @@ window.onload = function() {
  document.getElementById("left").addEventListener("click", left);
  document.getElementById("right").addEventListener("click", right);
 
- var pic = new Image();
+ var player = new Image();
+ var enemy = new Image();
 
  var x = 50;
  var y = 380;
@@ -30,10 +31,15 @@ function destination() {
   ctx.stroke();
 }
 
-function drawPic(){
-  pic.src = "images/turtle.jpg";
-  pic.onload = function(){
-  ctx.drawImage(pic,x -34,y - 40);
+function drawCharacter(characterType,imageName,xPosition,yPosition){
+  ctx.arc(x,y,ballRadius,0,Math.PI *2);
+  drawPic(characterType,imageName,x,y);
+}
+
+function drawPic(characterType, imageName,xPosition,yPosition){
+  characterType.src = "images/" + imageName;
+  characterType.onload = function(){
+  ctx.drawImage(characterType,xPosition -34,yPosition - 40);
   }
 
 }
@@ -42,8 +48,8 @@ function draw(){
   clear();
   drawGrid();
   ctx.beginPath();
-  ctx.arc(x,y,ballRadius,0,Math.PI *2);
-  drawPic();
+  drawCharacter(player,"turtle.jpg",x,y);
+
   ctx.fillStyle = "blue";
   ctx.fill();
 
