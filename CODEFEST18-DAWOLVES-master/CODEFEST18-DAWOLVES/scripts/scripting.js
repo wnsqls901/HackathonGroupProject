@@ -10,6 +10,8 @@ window.onload = function() {
  document.getElementById("left").addEventListener("click", left);
  document.getElementById("right").addEventListener("click", right);
 
+ var pic = new Image();
+
  var x = 50;
  var y = 380;
 
@@ -26,6 +28,14 @@ function destination() {
   ctx.fillStyle = "green";
   ctx.fillRect(682.5, 0, 97, 84);
   ctx.stroke();
+}
+
+function drawPic(){
+  pic.src = "images/turtle.jpg";
+  pic.onload = function(){
+  ctx.drawImage(pic,x,y);
+  }
+
 }
 
 function draw(){
