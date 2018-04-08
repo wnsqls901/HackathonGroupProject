@@ -10,6 +10,8 @@ window.onload = function() {
  document.getElementById("left").addEventListener("click", left);
  document.getElementById("right").addEventListener("click", right);
 
+ var pic = new Image();
+
  var x = 50;
  var y = 380;
 
@@ -23,9 +25,17 @@ var index = 0;
 
 function destination() {
   ctx.beginPath();
-  ctx.fillStyle = "gray";
+  ctx.fillStyle = "#ebc600";
   ctx.fillRect(390, 252.5, 97, 83);
   ctx.stroke();
+}
+
+function drawPic(){
+  pic.src = "images/turtle.jpg";
+  pic.onload = function(){
+  ctx.drawImage(pic,x,y);
+  }
+
 }
 
 function draw(){
@@ -33,6 +43,7 @@ function draw(){
   drawGrid();
   ctx.beginPath();
   ctx.arc(x,y,ballRadius,0,Math.PI *2);
+  drawPic();
   ctx.fillStyle = "green";
   ctx.fill();
 
