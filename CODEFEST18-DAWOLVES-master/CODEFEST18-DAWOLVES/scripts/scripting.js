@@ -10,8 +10,6 @@ window.onload = function() {
  document.getElementById("left").addEventListener("click", left);
  document.getElementById("right").addEventListener("click", right);
 
-
-
  var x = 50;
  var y = 380;
 
@@ -23,6 +21,12 @@ window.onload = function() {
 var arrayOfLines = null;
 var index = 0;
 
+function destination() {
+  ctx.beginPath();
+  ctx.fillStyle = "gray";
+  ctx.fillRect(390, 252.5, 97, 83);
+  ctx.stroke();
+}
 
 function draw(){
   clear();
@@ -31,7 +35,11 @@ function draw(){
   ctx.arc(x,y,ballRadius,0,Math.PI *2);
   ctx.fillStyle = "green";
   ctx.fill();
+
+  destination();
   ctx.closePath();
+
+
 }
 
 function clear(){
@@ -121,6 +129,7 @@ function right(){
   draw();
   clear();
   draw();
+
 }
 function reset() {
   x = 50;
@@ -159,6 +168,7 @@ function drawOnce()
   {
     setTimeout(drawOnce, 500);
   }
+
 }
 
 function evaluateCommand(command)
@@ -175,6 +185,10 @@ function evaluateCommand(command)
   } else if(command === ".right()")
   {
     right();
+  }
+  //Finish Alert
+  if (x == 438 && y == 295) {
+    alert("Finished!");
   }
 }
 
