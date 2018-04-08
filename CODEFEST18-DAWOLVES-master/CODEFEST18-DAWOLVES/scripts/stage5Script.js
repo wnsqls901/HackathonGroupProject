@@ -82,8 +82,6 @@ function movableObject() {
 
 function drawCharacter(characterType,imageName,xPosition,yPosition){
   ctx.arc(x,y,ballRadius,0,Math.PI *2);
-  ctx.fillStyle = "blue";
-  ctx.fill();
   drawPic(characterType,imageName,x,y);
 }
 
@@ -100,7 +98,12 @@ function draw(){
   drawGrid();
   ctx.beginPath();
   drawCharacter(player,"turtle.jpg",x,y);
+
+  ctx.fillStyle = "blue";
+  ctx.fill();
+
   destination();
+  movableObject();
   ctx.closePath();
 
 
@@ -275,8 +278,7 @@ function evaluateCommand(command)
 function evaluateFinish(finishX, finishY)
 {
   if (x >= finishX && y <= finishY) {
-    alert("Good Job! You have finished!");
-    window.location.href = "stage2.html";
+    alert("Good Job! You have completed the Game!");
   }
 }
 

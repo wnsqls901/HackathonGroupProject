@@ -279,7 +279,7 @@ function evaluateFinish(finishX, finishY)
 {
   if (x >= finishX && y <= finishY) {
     alert("Good Job! You have finished!");
-    window.location.href = "stage2.html";
+    window.location.href = "stage3.html";
   }
 }
 
