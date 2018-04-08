@@ -20,13 +20,18 @@ window.onload = function() {
  var movY = 295;
  var confDirec = 0;
 
+
  var destX = 682.5;
  var destY = 0;
+
 
  var ballRadius = 15;
 
  var dx = 97;
  var dy = 85;
+
+var imovX1 = 585.5;
+var imovY1 = 0;
 
 var arrayOfLines = null;
 var index = 0;
@@ -35,6 +40,12 @@ function destination() {
   ctx.beginPath();
   ctx.fillStyle = "green";
   ctx.fillRect(destX, destY, 97, 84);
+  ctx.stroke();
+}
+
+function imovableObject(imovX, imovY) {
+  ctx.fillStyle = "black";
+  ctx.fillRect(imovX, imovY, 97, 84);
   ctx.stroke();
 }
 function movableObject() {
@@ -102,6 +113,7 @@ function draw(){
   ctx.fillStyle = "blue";
   ctx.fill();
 
+  imovableObject(imovX1, imovY1);
   destination();
   movableObject();
   ctx.closePath();
@@ -279,7 +291,7 @@ function evaluateFinish(finishX, finishY)
 {
   if (x >= finishX && y <= finishY) {
     alert("Good Job! You have finished!");
-    window.location.href = "stage3.html";
+    window.location.href = "stage2.html";
   }
 }
 
