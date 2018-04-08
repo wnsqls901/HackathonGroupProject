@@ -14,7 +14,7 @@ window.onload = function() {
  var ballRadius = 15;
 
  var dx = 97;
- var dy = -85;
+ var dy = 85;
 
 function draw(){
   clear();
@@ -24,8 +24,6 @@ function draw(){
   ctx.fillStyle = "green";
   ctx.fill();
   ctx.closePath();
-
-
 }
 
 function clear(){
@@ -70,38 +68,58 @@ function drawHorizontalLines(){
 
 
 function up(){
-  y += dy;
-  draw();
-  clear();
-  draw();
-
+  if(y - dy > canvas.height-ballRadius || y - dy < ballRadius) {
+    y -= 0;
+    draw();
+    clear();
+    draw();
+  } else {
+    y -= dy;
+    draw();
+    clear();
+    draw();
+  }
 }
 
 function down(){
-  y -= dy;
-  draw();
-  clear();
-  draw();
+  if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+    y += 0;
+    draw();
+    clear();
+    draw();
+  }
+     else {
+    y += dy;
+    draw();
+    clear();
+    draw();  }
 }
 
 function left(){
- x -= dx;
- draw();
- clear();
- draw();
+  if(x - dx> canvas.width-ballRadius || x - dx < ballRadius) {
+    x -= 0;
+    draw();
+    clear();
+    draw();  } else {
+    x -= dx;
+    draw();
+    clear();
+    draw();  }
 }
 
 function right(){
-  x += dx;
-  draw();
-  clear();
-  draw();
+  if(x + dx > canvas.width-ballRadius || x + dx< ballRadius) {
+    x += 0;
+    draw();
+    clear();
+    draw();  } else{
+    x += dx;
+    draw();
+    clear();
+    draw();  }
 }
 
-
-
 draw();
-
 
 
 
