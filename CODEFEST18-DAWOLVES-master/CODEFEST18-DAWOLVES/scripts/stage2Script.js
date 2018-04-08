@@ -103,7 +103,7 @@ function draw(){
   ctx.fill();
 
   destination();
-
+  movableObject();
   ctx.closePath();
 
 
