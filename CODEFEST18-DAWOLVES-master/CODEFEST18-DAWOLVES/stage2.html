@@ -4,10 +4,6 @@
 	<link rel="stylesheet" href="style/styles.css" type="text/css" />
 </head>
 <body>
-	<header>
-		<h1>This website is desiged to teach -- FIX</h1>
-	</header>
-
 	<div id="wrapper">
     <canvas id="myCanvas" width="780" height="420"></canvas>
 		<script src="scripts/scripting.js"> </script>
@@ -28,19 +24,16 @@
 				</ul>
 			</span>
 		</div>
-		<div class="developer_buttons">
-			<button name="up" type="button" id="up" value="up">UP</button>
-			<button name="down" type="button" id="down" value="down">DOWN</button>
-			<button name="left" type="button" id="left" value="left">LEFT</button>
-			<button mae="right" type="button" id="right" value="right">RIGHT</button>
-		</div>
-		<div class="button_format">
-			<div id="button_panel">
-				<button name="previous" type="button" id="previous" value="prev">Previous</button>
-				<button name="execute" type="submit" id="execute" value="exe">Execute</button>
-				<button name="next" type="button" id="next" value="next">Next</button>
-			</div>
 
+			<div id="button_panel">
+				<button name="previous" type="button" id="previous" value="prev" onclick="window.location.href='stage1.html'">Previous</button>
+					<div id="button_non_directional">
+						<button name="execute" type="submit" id="execute" value="exe">Execute</button>
+						<button name="reset" type="reset" id="reset" value="reset">Reset</button>
+					</div>
+				<button name="next" type="button" id="next" value="next" onclick="window.location.href='stage3.html'">Next</button>
+			</div>
+			
 		</div>
 	</div>
 </body>
