@@ -82,6 +82,11 @@ function movableObject() {
 
 function drawCharacter(characterType,imageName,xPosition,yPosition){
   ctx.arc(x,y,ballRadius,0,Math.PI *2);
+<<<<<<< HEAD
+=======
+  ctx.fillStyle = "blue";
+  ctx.fill();
+>>>>>>> 4f2e3a28081936e5fe16aa3d53357665034cde77
   drawPic(characterType,imageName,x,y);
 }
 
@@ -98,12 +103,16 @@ function draw(){
   drawGrid();
   ctx.beginPath();
   drawCharacter(player,"turtle.jpg",x,y);
+<<<<<<< HEAD
 
   ctx.fillStyle = "blue";
   ctx.fill();
 
   destination();
 
+=======
+  destination();
+>>>>>>> 4f2e3a28081936e5fe16aa3d53357665034cde77
   ctx.closePath();
 
 
