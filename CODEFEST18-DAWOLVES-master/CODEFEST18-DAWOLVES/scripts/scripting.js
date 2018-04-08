@@ -8,6 +8,8 @@ window.onload = function() {
  document.getElementById("left").addEventListener("click", left);
  document.getElementById("right").addEventListener("click", right);
 
+ if (document.getElementById("input").value
+
  var x = 50;
  var y = 380;
 
