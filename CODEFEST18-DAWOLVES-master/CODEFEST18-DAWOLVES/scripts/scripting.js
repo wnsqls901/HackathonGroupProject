@@ -33,7 +33,7 @@ function destination() {
 function drawPic(){
   pic.src = "images/turtle.jpg";
   pic.onload = function(){
-  ctx.drawImage(pic,x,y);
+  ctx.drawImage(pic,x -40,y - 43);
   }
 
 }
