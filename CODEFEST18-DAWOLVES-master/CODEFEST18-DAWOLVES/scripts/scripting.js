@@ -103,7 +103,7 @@ function up(){
   draw();
   clear();
   draw();
-  evaluateFinish();
+  evaluateFinish(682.5, 69);
 }
 
 function down(){
@@ -116,7 +116,7 @@ function down(){
  draw();
  clear();
  draw();
- evaluateFinish();
+ evaluateFinish(682.5, 69);
 }
 
 function left(){
@@ -130,7 +130,7 @@ function left(){
   draw();
   clear();
   draw();
-  evaluateFinish();
+  evaluateFinish(682.5, 69);
 }
 
 function right(){
@@ -143,7 +143,7 @@ function right(){
   draw();
   clear();
   draw();
-  evaluateFinish();
+  evaluateFinish(682.5, 69);
 }
 function reset() {
   x = 50;
@@ -171,7 +171,7 @@ function execute(){
     index = 0;
     drawOnce();
   }
-  evaluateFinish();
+  evaluateFinish(682.5, 69);
  }
 
 function drawOnce()
@@ -203,19 +203,14 @@ function evaluateCommand(command)
   }
 }
 
-function evaluateFinish()
+function evaluateFinish(finishX, finishY)
 {
-  if (x >= 682.5 && y <= 69) {
-    alert("Finished!");
+  if (x >= finishX && y <= finishY) {
+    alert("Good Job! You have finished!");
     window.location.href = "stage2.html";
   }
 }
 
 draw();
-
-
-
-
-
 
 }
