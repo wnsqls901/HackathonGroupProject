@@ -15,6 +15,10 @@ window.onload = function() {
  var x = 50;
  var y = 380;
 
+ var movX = 147;
+ var movY = 295;
+ var confDirec = 0;
+
  var ballRadius = 15;
 
  var dx = 97;
@@ -27,6 +31,44 @@ function destination() {
   ctx.beginPath();
   ctx.fillStyle = "green";
   ctx.fillRect(682.5, 0, 97, 84);
+  ctx.stroke();
+}
+function movableObject() {
+  if (x === movX && y === movY) {
+    if (confDirec === 1) {
+      if(movY - dy > canvas.height-ballRadius || movY - dy < ballRadius) {
+        movY -= 0;
+        down();
+      } else {
+        movY -= dy;
+      }
+    } else if (confDirec === 2) {
+      if(movY + dy > canvas.height-ballRadius || movY + dy < ballRadius) {
+        movY += 0;
+        up();
+      } else {
+        movY += dy;
+      }
+    } else if (confDirec === 3) {
+        if(movX - dx > canvas.width-ballRadius || movX - dx < ballRadius) {
+          movX -= 0;
+          right();
+        } else {
+          movX -= dx;
+        }
+    } else if (confDirec === 4) {
+          if(movX + dx > canvas.width-ballRadius || movX + dx < ballRadius) {
+            movX += 0;
+            left();
+          } else {
+            movX += dx;
+          }
+    } else {
+    }
+  }
+  ctx.arc(movX ,movY,ballRadius,0,Math.PI *2);
+  ctx.fillStyle = "red";
+  ctx.fill();
   ctx.stroke();
 }
 
@@ -46,8 +88,9 @@ function draw(){
   drawPic();
   ctx.fillStyle = "blue";
   ctx.fill();
-
+  drawPic();
   destination();
+  movableObject();
   ctx.closePath();
 
 
@@ -100,6 +143,8 @@ function up(){
   } else {
     y -= dy;
   }
+
+  confDirec = 1;
   draw();
   clear();
   draw();
@@ -113,6 +158,8 @@ function down(){
      else {
     y += dy;
  }
+
+ confDirec = 2;
  draw();
  clear();
  draw();
@@ -127,6 +174,7 @@ function left(){
     {
       x -= dx;
   }
+  confDirec = 3;
   draw();
   clear();
   draw();
@@ -140,6 +188,7 @@ function right(){
      else{
     x += dx;
   }
+  confDirec = 4;
   draw();
   clear();
   draw();
@@ -197,9 +246,11 @@ function evaluateCommand(command)
   } else if(command === ".left()")
   {
     left();
+
   } else if(command === ".right()")
   {
     right();
+
   }
 }
 
