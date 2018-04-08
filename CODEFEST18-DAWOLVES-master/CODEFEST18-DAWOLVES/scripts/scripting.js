@@ -80,11 +80,13 @@ function up(){
     draw();
     clear();
     draw();
+
   } else {
     y -= dy;
     draw();
     clear();
     draw();
+
   }
 }
 
@@ -125,54 +127,85 @@ function right(){
     clear();
     draw();  }
 }
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
 function execute(){
   var textarea = document.getElementById("input");
   var arrayOfLines = textarea.value.split("\n");
-  var countUp = 0;
-  var countDown = 0;
-  var countLeft = 0;
-  var countRight = 0;
+  var count = 0
   console.log(arrayOfLines);
   console.log(textarea.value);
 
   //
-  for(i = 0; i< arrayOfLines.length; i++){
-    if(arrayOfLines[i] === "up" ){
-      countUp++;
+  while(count != arrayOfLines.length){
+    if(arrayOfLines[count] === "up"){
+      up();
+      count +=1;
+    }else if (arrayOfLines[count] === "down") {
+      down();
+
+
+    }else if (arrayOfLines[count] === "right") {
+      right();
+
     }
-    if(arrayOfLines[i] === "down" ){
-      countDown++;
-    }
-    if(arrayOfLines[i] === "left" ){
-      countLeft++;
-    }
-    if(arrayOfLines[i] === "right" ){
-      countRight++;
-    }
+    wait(1000);
+    // switch(arrayOfLines[count]){
+    //   case "up":
+    //    up();
+    //    count += 1
+    //
+    //    break;
+    //   case "right":
+    //    right();
+    //    count += 1
+    //    break;
+    //   default:
+    //     draw();
+    //     count += 1
+    //
+    // }
+
+
   }
-
-  //
-  for(j = 0; j< countUp; j++) {
-    up();
-  }
-
-  //
-  for(j = 0; j< countDown; j++) {
-    down();
-  }
-
-  //
-  for(j = 0; j< countLeft; j++) {
-    left();
-  }
-
-  //
-  for(j = 0; j< countRight; j++) {
-    right();
-  }
+  // for(i = 0; i<= arrayOfLines.length; i++){
 
 
-  alert(textarea.value);
+
+    // switch(arrayOfLines[i]){
+    //   case "up":
+    //    up();
+    //    break;
+    //   case "right":
+    //    right();
+    //    break;
+    //   default:
+    //     draw();
+    //     console.log([i]);
+    // }
+    //if(arrayOfLines[i] === "up" ){
+    //   countUp++;
+    // }
+    // if(arrayOfLines[i] === "down" ){
+    //   countDown++;
+    // }
+    // if(arrayOfLines[i] === "left" ){
+    //   countLeft++;
+    // }
+    // if(arrayOfLines[i] === "right" ){
+    //   countRight++;
+    // }
+
+
+
+
+
 
   // for(i = 0; i < 5; i++){
   //   alert(i);
