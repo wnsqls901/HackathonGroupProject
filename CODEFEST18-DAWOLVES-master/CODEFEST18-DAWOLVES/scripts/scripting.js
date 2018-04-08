@@ -4,7 +4,6 @@ window.onload = function() {
  var canvas = document.getElementById("myCanvas");
  var ctx = canvas.getContext("2d");
  document.getElementById("execute").addEventListener("click",execute);
- document.getElementById("reset").addEventListener("click", reset);
  document.getElementById("up").addEventListener("click", up);
  document.getElementById("down").addEventListener("click", down);
  document.getElementById("left").addEventListener("click", left);
@@ -20,8 +19,8 @@ window.onload = function() {
  var dx = 97;
  var dy = 85;
 
-
-
+var arrayOfLines = null;
+var index = 0;
 
 
 function draw(){
@@ -36,18 +35,6 @@ function draw(){
 
 function clear(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
-}
-
-function reset(){
-  clear();
-  drawGrid();
-  ctx.beginPath();
-  ctx.arc(50,380,ballRadius,0,Math.PI *2);
-  ctx.fillStyle = "green";
-  ctx.fill();
-  ctx.closePath();
-  x = 50;
-  y = 380;
 }
 
 function drawGrid(){
@@ -90,144 +77,97 @@ function drawHorizontalLines(){
 function up(){
   if(y - dy > canvas.height-ballRadius || y - dy < ballRadius) {
     y -= 0;
-    draw();
-    clear();
-    draw();
-
   } else {
     y -= dy;
-    draw();
-    clear();
-    draw();
-
   }
+  draw();
+  clear();
+  draw();
 }
 
 function down(){
   if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
     y += 0;
-    draw();
-    clear();
-    draw();
   }
      else {
     y += dy;
-    draw();
-    clear();
-    draw();  }
+ }
+ draw();
+ clear();
+ draw();
 }
 
 function left(){
-  if(x - dx> canvas.width-ballRadius || x - dx < ballRadius) {
+  if(x - dx> canvas.width-ballRadius || x - dx < ballRadius)
+   {
     x -= 0;
-    draw();
-    clear();
-    draw();  } else {
-    x -= dx;
-    draw();
-    clear();
-    draw();  }
+    } else
+    {
+      x -= dx;
+  }
+  draw();
+  clear();
+  draw();
 }
 
 function right(){
   if(x + dx > canvas.width-ballRadius || x + dx< ballRadius) {
     x += 0;
-    draw();
-    clear();
-    draw();  } else{
+    }
+     else{
     x += dx;
-    draw();
-    clear();
-    draw();  }
-}
-
-function wait(ms){
-   var start = new Date().getTime();
-   var end = start;
-   while(end < start + ms) {
-     end = new Date().getTime();
   }
+  draw();
+  clear();
+  draw();
 }
 function execute(){
   var textarea = document.getElementById("input");
-  var arrayOfLines = textarea.value.split("\n");
-  var count = 0
+  arrayOfLines = textarea.value.split("\n");
+  var countUp = 0;
+  var countDown = 0;
+  var countLeft = 0;
+  var countRight = 0;
   console.log(arrayOfLines);
   console.log(textarea.value);
 
 
-  //
-  while(count != arrayOfLines.length){
-    if(arrayOfLines[count] === "up"){
-      up();
-      count +=1;
-    }else if (arrayOfLines[count] === "down") {
-      down();
-
-
-    }else if (arrayOfLines[count] === "right") {
-      right();
-
-    }
-    wait(1000);
-    // switch(arrayOfLines[count]){
-    //   case "up":
-    //    up();
-    //    count += 1
-    //
-    //    break;
-    //   case "right":
-    //    right();
-    //    count += 1
-    //    break;
-    //   default:
-    //     draw();
-    //     count += 1
-    //
-    // }
-
-
+  // if(arrayOfLines.isEmpty())
+  if(arrayOfLines.length != 0)
+  {
+    index = 0;
+    drawOnce();
   }
-  // for(i = 0; i<= arrayOfLines.length; i++){
 
-
-
-    // switch(arrayOfLines[i]){
-    //   case "up":
-    //    up();
-    //    break;
-    //   case "right":
-    //    right();
-    //    break;
-    //   default:
-    //     draw();
-    //     console.log([i]);
-    // }
-    //if(arrayOfLines[i] === "up" ){
-    //   countUp++;
-    // }
-    // if(arrayOfLines[i] === "down" ){
-    //   countDown++;
-    // }
-    // if(arrayOfLines[i] === "left" ){
-    //   countLeft++;
-    // }
-    // if(arrayOfLines[i] === "right" ){
-    //   countRight++;
-    // }
-
-
-
-
-
-
-  // for(i = 0; i < 5; i++){
-  //   alert(i);
-  //    if(arrayOfLines[i] == ".up"){
-  //     up();
-  // }
  }
 
+function drawOnce()
+{
+  var command = arrayOfLines[index];
+  index+=1;
+  evaluateCommand(command);
+  if(arrayOfLines.length > index)
+  {
+    setTimeout(drawOnce, 1000);
+  }
+}
+
+function evaluateCommand(command)
+{
+  if(command === ".up()")
+  {
+    up();
+  } else if(command === ".down()")
+  {
+    down();
+  } else if(command === ".left()")
+  {
+    left();
+  } else if(command === ".right()")
+  {
+    right();
+  }
+}
 
 draw();
 
