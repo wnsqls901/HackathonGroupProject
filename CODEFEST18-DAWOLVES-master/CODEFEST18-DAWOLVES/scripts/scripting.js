@@ -19,6 +19,9 @@ window.onload = function() {
  var movY = 295;
  var confDirec = 0;
 
+ var destX = 682.5;
+ var destY = 0;
+
  var ballRadius = 15;
 
  var dx = 97;
@@ -30,7 +33,7 @@ var index = 0;
 function destination() {
   ctx.beginPath();
   ctx.fillStyle = "green";
-  ctx.fillRect(682.5, 0, 97, 84);
+  ctx.fillRect(destX, destY, 97, 84);
   ctx.stroke();
 }
 function movableObject() {
@@ -63,8 +66,12 @@ function movableObject() {
           } else {
             movX += dx;
           }
-    } else {
     }
+  }
+  if (movX === 729 && movY === 40) {
+      alert("fucked up");
+      resetMovableObject();
+      reset();
   }
   ctx.arc(movX ,movY,ballRadius,0,Math.PI *2);
   ctx.fillStyle = "red";
@@ -197,6 +204,14 @@ function right(){
 function reset() {
   x = 50;
   y = 380;
+
+  draw();
+  clear();
+  draw();
+}
+function resetMovableObject() {
+  movX = 147;
+  movY = 295;
 
   draw();
   clear();
