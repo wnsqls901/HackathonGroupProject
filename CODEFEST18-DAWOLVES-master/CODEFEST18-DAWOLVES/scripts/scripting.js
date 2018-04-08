@@ -128,12 +128,47 @@ function right(){
 function execute(){
   var textarea = document.getElementById("input");
   var arrayOfLines = textarea.value.split("\n");
+  var countUp = 0;
+  var countDown = 0;
+  var countLeft = 0;
+  var countRight = 0;
   console.log(arrayOfLines);
   console.log(textarea.value);
+
+  //
   for(i = 0; i< arrayOfLines.length; i++){
-    if(arrayOfLines[i] === ".up" ){
-      up();
+    if(arrayOfLines[i] === "up" ){
+      countUp++;
     }
+    if(arrayOfLines[i] === "down" ){
+      countDown++;
+    }
+    if(arrayOfLines[i] === "left" ){
+      countLeft++;
+    }
+    if(arrayOfLines[i] === "right" ){
+      countRight++;
+    }
+  }
+
+  //
+  for(j = 0; j< countUp; j++) {
+    up();
+  }
+
+  //
+  for(j = 0; j< countDown; j++) {
+    down();
+  }
+
+  //
+  for(j = 0; j< countLeft; j++) {
+    left();
+  }
+
+  //
+  for(j = 0; j< countRight; j++) {
+    right();
   }
 
 
