@@ -163,8 +163,7 @@ function drawHorizontalLines(){
 
 
 function up(){
-  if(y - dy > canvas.height-ballRadius || y - dy < ballRadius
-    || y - dy === imovY1) {
+  if(y - dy > canvas.height-ballRadius || y - dy < ballRadius) {
     y -= 0;
   } else {
     y -= dy;
