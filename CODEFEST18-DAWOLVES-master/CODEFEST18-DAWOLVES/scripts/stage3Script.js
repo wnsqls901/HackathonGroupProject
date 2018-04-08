@@ -71,7 +71,6 @@ function movableObject() {
     }
   }
   if (movX === 729 && movY === 40) {
-      alert("fucked up");
       resetMovableObject();
       reset();
   }
@@ -83,16 +82,17 @@ function movableObject() {
 
 function drawPortal()
 {
+
   ctx.beginPath();
   drawCharacter(portal, "portal.png", 342.5, 211);
   drawPic(portal, "portal.png", 342.5, 211);
-  ctx.fillStyle = "black";
+  //ctx.fillStyle = "black";
   ctx.fill();
-  ctx.stroke();
-
-  if (x == 342.5 && y <= 211) {
-      reset();
+  if (x === 341 && y ===210) {
+    reset();
   }
+
+
 }
 
 function drawCharacter(characterType,imageName,xPosition,yPosition){

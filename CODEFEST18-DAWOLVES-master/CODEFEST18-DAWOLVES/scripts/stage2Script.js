@@ -81,7 +81,6 @@ function movableObject() {
     }
   }
   if (movX === 729 && movY === 40) {
-      alert("fucked up");
       resetMovableObject();
       reset();
   }
@@ -113,7 +112,7 @@ function draw(){
   ctx.fillStyle = "blue";
   ctx.fill();
 
-  imovableObject(imovX1, imovY1);
+  //imovableObject(imovX1, imovY1);
   destination();
   movableObject();
   ctx.closePath();
