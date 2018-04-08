@@ -25,8 +25,8 @@ var index = 0;
 
 function destination() {
   ctx.beginPath();
-  ctx.fillStyle = "#ebc600";
-  ctx.fillRect(390, 252.5, 97, 83);
+  ctx.fillStyle = "green";
+  ctx.fillRect(682.5, 0, 97, 84);
   ctx.stroke();
 }
 
@@ -43,8 +43,7 @@ function draw(){
   drawGrid();
   ctx.beginPath();
   ctx.arc(x,y,ballRadius,0,Math.PI *2);
-  drawPic();
-  ctx.fillStyle = "green";
+  ctx.fillStyle = "blue";
   ctx.fill();
 
   destination();
@@ -198,7 +197,7 @@ function evaluateCommand(command)
     right();
   }
   //Finish Alert
-  if (x == 438 && y == 295) {
+  if (x == 682.5 && y == 0) {
     alert("Finished!");
   }
 }
