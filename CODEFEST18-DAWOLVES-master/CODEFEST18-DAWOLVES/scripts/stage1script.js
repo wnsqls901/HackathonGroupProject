@@ -13,8 +13,15 @@ window.onload = function() {
  var player = new Image();
  var enemy = new Image();
 
+ var enemyTurnCounter = 0
+
+ var hitWall = false;
+
  var x = 50;
  var y = 380;
+
+ var enemyX = 621;
+ var enemyY = 50;
 
  var movX = 147;
  var movY = 295;
@@ -81,10 +88,10 @@ function movableObject() {
 }
 
 function drawCharacter(characterType,imageName,xPosition,yPosition){
-  ctx.arc(x,y,ballRadius,0,Math.PI *2);
+  ctx.arc(xPosition,yPosition,ballRadius,0,Math.PI *2);
   ctx.fillStyle = "blue";
   ctx.fill();
-  drawPic(characterType,imageName,x,y);
+  drawPic(characterType,imageName,xPosition,yPosition);
 }
 
 function drawPic(characterType, imageName,xPosition,yPosition){
@@ -95,11 +102,57 @@ function drawPic(characterType, imageName,xPosition,yPosition){
 
 }
 
+function enemyDown(){
+  if(enemyY + dy > canvas.height-ballRadius || enemyY + dy < ballRadius) {
+    console.log("hello");
+    enemyY += 0;
+    hitWall = true;
+
+
+  }
+     else {
+    enemyY += dy;
+ }
+ console.log(enemyY + dy  );
+ console.log(canvas.height-ballRadius);
+
+}
+
+function enemyUp(){
+  if(enemyY - dy > canvas.height-ballRadius || enemyY - dy < ballRadius) {
+    enemyY -= 0;
+
+  }
+     else {
+    enemyY -= dy;
+ }
+
+
+}
+
+function enemyMovement(){
+
+  console.log(hitWall);
+  if(enemyTurnCounter != 4 || hitWall ){
+    enemyDown();
+    enemyTurnCounter +=1;
+  }
+  else if(enemyTurnCounter != 0) {
+        enemyUp();
+        enemyTurnCounter -=1;
+  }
+
+
+}
+
 function draw(){
   clear();
   drawGrid();
   ctx.beginPath();
   drawCharacter(player,"turtle.jpg",x,y);
+  drawCharacter(enemy,"croc1.jpg",enemyX,enemyY);
+  enemyMovement();
+
   destination();
   ctx.closePath();
 
