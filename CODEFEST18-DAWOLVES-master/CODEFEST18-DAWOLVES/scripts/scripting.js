@@ -3,6 +3,7 @@ window.onload = function() {
 
  var canvas = document.getElementById("myCanvas");
  var ctx = canvas.getContext("2d");
+ document.getElementById("reset").addEventListener("click", reset);
  document.getElementById("execute").addEventListener("click",execute);
  document.getElementById("up").addEventListener("click", up);
  document.getElementById("down").addEventListener("click", down);
@@ -121,6 +122,14 @@ function right(){
   clear();
   draw();
 }
+function reset() {
+  x = 50;
+  y = 380;
+
+  draw();
+  clear();
+  draw();
+}
 function execute(){
   var textarea = document.getElementById("input");
   arrayOfLines = textarea.value.split("\n");
@@ -148,7 +157,7 @@ function drawOnce()
   evaluateCommand(command);
   if(arrayOfLines.length > index)
   {
-    setTimeout(drawOnce, 1000);
+    setTimeout(drawOnce, 500);
   }
 }
 
