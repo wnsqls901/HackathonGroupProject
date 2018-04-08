@@ -102,6 +102,7 @@ function up(){
   draw();
   clear();
   draw();
+  evaluateFinish();
 }
 
 function down(){
@@ -114,6 +115,7 @@ function down(){
  draw();
  clear();
  draw();
+ evaluateFinish();
 }
 
 function left(){
@@ -127,6 +129,7 @@ function left(){
   draw();
   clear();
   draw();
+  evaluateFinish();
 }
 
 function right(){
@@ -139,7 +142,7 @@ function right(){
   draw();
   clear();
   draw();
-
+  evaluateFinish();
 }
 function reset() {
   x = 50;
@@ -149,6 +152,7 @@ function reset() {
   clear();
   draw();
 }
+
 function execute(){
   var textarea = document.getElementById("input");
   arrayOfLines = textarea.value.split("\n");
@@ -166,7 +170,7 @@ function execute(){
     index = 0;
     drawOnce();
   }
-
+  evaluateFinish();
  }
 
 function drawOnce()
@@ -196,9 +200,13 @@ function evaluateCommand(command)
   {
     right();
   }
-  //Finish Alert
-  if (x == 682.5 && y == 0) {
+}
+
+function evaluateFinish()
+{
+  if (x >= 682.5 && y <= 69) {
     alert("Finished!");
+    window.location.href = "stage2.html";
   }
 }
 
