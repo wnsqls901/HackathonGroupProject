@@ -33,7 +33,7 @@ function destination() {
 function drawPic(){
   pic.src = "images/turtle.jpg";
   pic.onload = function(){
-  ctx.drawImage(pic,x,y);
+  ctx.drawImage(pic,x -34,y - 40);
   }
 
 }
@@ -43,6 +43,7 @@ function draw(){
   drawGrid();
   ctx.beginPath();
   ctx.arc(x,y,ballRadius,0,Math.PI *2);
+  drawPic();
   ctx.fillStyle = "blue";
   ctx.fill();
 
