@@ -4,6 +4,7 @@ window.onload = function() {
  var canvas = document.getElementById("myCanvas");
  var ctx = canvas.getContext("2d");
  document.getElementById("execute").addEventListener("click",execute);
+ document.getElementById("reset").addEventListener("click", reset);
  document.getElementById("up").addEventListener("click", up);
  document.getElementById("down").addEventListener("click", down);
  document.getElementById("left").addEventListener("click", left);
@@ -35,6 +36,18 @@ function draw(){
 
 function clear(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
+function reset(){
+  clear();
+  drawGrid();
+  ctx.beginPath();
+  ctx.arc(50,380,ballRadius,0,Math.PI *2);
+  ctx.fillStyle = "green";
+  ctx.fill();
+  ctx.closePath();
+  x = 50;
+  y = 380;
 }
 
 function drawGrid(){
@@ -141,6 +154,7 @@ function execute(){
   var count = 0
   console.log(arrayOfLines);
   console.log(textarea.value);
+
 
   //
   while(count != arrayOfLines.length){
