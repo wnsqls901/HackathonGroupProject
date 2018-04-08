@@ -12,6 +12,7 @@ window.onload = function() {
 
  var player = new Image();
  var enemy = new Image();
+ var portal = new Image();
 
  var x = 50;
  var y = 380;
@@ -37,7 +38,6 @@ function destination() {
   ctx.fillRect(destX, destY, 97, 84);
   ctx.stroke();
 }
-
 function movableObject() {
   if (x === movX && y === movY) {
     if (confDirec === 1) {
@@ -71,7 +71,7 @@ function movableObject() {
     }
   }
   if (movX === 729 && movY === 40) {
-      alert("Ooops!! That is not the correct Algorithm. It's ok. Try Again!");
+      alert("fucked up");
       resetMovableObject();
       reset();
   }
@@ -81,9 +81,18 @@ function movableObject() {
   ctx.stroke();
 }
 
-function portal()
+function drawPortal()
 {
+  ctx.beginPath();
+  drawCharacter(portal, "portal.png", 342.5, 211);
+  drawPic(portal, "portal.png", 342.5, 211);
+  ctx.fillStyle = "black";
+  ctx.fill();
+  ctx.stroke();
 
+  if (x == 342.5 && y <= 211) {
+      reset();
+  }
 }
 
 function drawCharacter(characterType,imageName,xPosition,yPosition){
@@ -110,6 +119,7 @@ function draw(){
 
   destination();
   movableObject();
+  drawPortal();
   ctx.closePath();
 
 
