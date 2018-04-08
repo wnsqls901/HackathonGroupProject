@@ -37,6 +37,7 @@ function destination() {
   ctx.fillRect(destX, destY, 97, 84);
   ctx.stroke();
 }
+
 function movableObject() {
   if (x === movX && y === movY) {
     if (confDirec === 1) {
@@ -70,7 +71,7 @@ function movableObject() {
     }
   }
   if (movX === 729 && movY === 40) {
-      alert("fucked up");
+      alert("Ooops!! That is not the correct Algorithm. It's ok. Try Again!");
       resetMovableObject();
       reset();
   }
@@ -78,6 +79,11 @@ function movableObject() {
   ctx.fillStyle = "red";
   ctx.fill();
   ctx.stroke();
+}
+
+function portal()
+{
+
 }
 
 function drawCharacter(characterType,imageName,xPosition,yPosition){
